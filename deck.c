@@ -1,6 +1,8 @@
 #include "deck.h"
 #include "players.h"
+#include <stdio.h>
 #include <stdlib.h>
+
 
 const char *ranks[] = {
         "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"
@@ -47,3 +49,22 @@ for (int s = 0; s < 4; s++) {//populate deck
     }
 }
 
+void flop(Card deck[52]){
+	printf("Here's the flop!");
+	//burn one
+	printf("%s of %s\n",deck[9].rank,deck[9].suit);
+	printf("%s of %s\n",deck[10].rank,deck[10].suit);
+	printf("%s of %sn",deck[11].rank,deck[11].suit);
+}
+
+void turn(Card deck[52]){
+	printf("Here's the turn!");
+	//burn one
+	printf("%s of %s\n",deck[13].rank,deck[13].suit);
+}
+
+void river(Card deck[52]){
+	printf("Here's the river!");
+	//burn one
+	printf("%s of %s\n",deck[15].rank,deck[15].suit);
+}

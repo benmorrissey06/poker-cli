@@ -14,6 +14,9 @@ extern const char *suits[];
 void deal(Player *p1, Player *p2, Player *p3, Player *p4, Card deck[52]);
 void shuffle(Card deck[52]);
 void populate(Card deck[52], int card_count);
+void flop(Card deck[]);
+void turn(Card deck[]);
+void river(Card deck[]);
 
     
 

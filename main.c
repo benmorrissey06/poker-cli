@@ -28,7 +28,9 @@ int bet(){
 
 
 int main() {
+    
 
+    float pot;
     char letter;
     srand(time(NULL));
 
@@ -37,10 +39,10 @@ int main() {
 
     //Starting with 4 players here
 
-    Player player1;//we are player 1 btw
-    Player player2;
-    Player player3;
-    Player player4;
+    Player player1 = {.archetype = 'm',.money=20.0};//we are player 1 btw
+    Player player2 = {.money = 20.0};
+    Player player3 = {.money = 20.0};
+    Player player4 = {.money = 20.0};
 
     Card deck[52]; //make deck of 52 cards
     int card_count = 0;
@@ -48,7 +50,7 @@ int main() {
     populate(deck,card_count);    
     shuffle(deck);    
     deal(&player1, &player2, &player3, &player4, deck);
-	    //dont need to write it as pointer here, since it already is when initiated as array
+        //dont need to write it as pointer here, since it already is when initiated as array
 	    //
 	    //We pass in pointers for better speed, and since we are going to modify these values, it is the best way to do it for permenent modification. otherwise nonpointers would modify local values
 
@@ -70,6 +72,16 @@ int main() {
    	sleep(1);
     	printf("%s of %s\n", player1.card2.rank, player1.card2.suit);
 	//printf("---\n");
+	
+        take_turn(&player1, &player2, &player3, &player4, &pot);
+        flop(deck);
+	
+        take_turn(&player1, &player2, &player3, &player4, &pot);
+        turn(deck);
+        take_turn(&player1, &player2, &player3, &player4, &pot); 
+        river(deck);
+        take_turn(&player1, &player2, &player3, &player4, &pot);
+    
     	return 0; 
 
     }
