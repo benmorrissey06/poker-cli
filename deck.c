@@ -50,21 +50,26 @@ for (int s = 0; s < 4; s++) {//populate deck
 }
 
 void flop(Card deck[52]){
-	printf("Here's the flop!");
+	printf("Here's the flop!\n");
 	//burn one
+	printf("\n");
 	printf("%s of %s\n",deck[9].rank,deck[9].suit);
 	printf("%s of %s\n",deck[10].rank,deck[10].suit);
-	printf("%s of %sn",deck[11].rank,deck[11].suit);
+	printf("%s of %s\n",deck[11].rank,deck[11].suit);
 }
 
 void turn(Card deck[52]){
-	printf("Here's the turn!");
+	printf("Here's the turn!\n");
 	//burn one
+	printf("\n");
 	printf("%s of %s\n",deck[13].rank,deck[13].suit);
+
 }
 
 void river(Card deck[52]){
-	printf("Here's the river!");
+	printf("Here's the river\n");
 	//burn one
+	printf("\n");
 	printf("%s of %s\n",deck[15].rank,deck[15].suit);
+
 }
