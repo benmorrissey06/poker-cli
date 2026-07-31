@@ -8,11 +8,14 @@ typedef struct Player {
 	Card card2;
 	float current_bet;
 	char blind_status;
+	int is_folded;
 	}Player;
 
 void take_turn(Player *p1, Player *p2, Player *p3, Player *p4, float *pot);
 
-void bet(Player *p, float *pot);
+float bet(Player *p, float *pot, float highest_bet);
+
+void showdown(Player *p1, Player *p2, Player *p3, Player *p4, float *pot);
 
 //Player player1;
 

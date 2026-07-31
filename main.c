@@ -39,10 +39,10 @@ int main() {
 
     //Starting with 4 players here
 
-    Player player1 = {.archetype = 'm',.money=20.0};//we are player 1 btw
-    Player player2 = {.money = 20.0};
-    Player player3 = {.money = 20.0};
-    Player player4 = {.money = 20.0};
+    Player player1 = {.archetype = 'm',.money=20.0, .is_folded=0};//we are player 1 btw
+    Player player2 = {.money = 20.0,.is_folded=0};
+    Player player3 = {.money = 20.0,.is_folded = 0};
+    Player player4 = {.money = 20.0, .is_folded = 0};
 
     Card deck[52]; //make deck of 52 cards
     int card_count = 0;
@@ -81,6 +81,7 @@ int main() {
         take_turn(&player1, &player2, &player3, &player4, &pot); 
         river(deck);
         take_turn(&player1, &player2, &player3, &player4, &pot);
+	showdown(&player1, &player2, &player3, &player4, &pot);
     
     	return 0; 
 

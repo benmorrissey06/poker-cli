@@ -63,6 +63,7 @@ void turn(Card deck[52]){
 	//burn one
 	printf("\n");
 	printf("%s of %s\n",deck[13].rank,deck[13].suit);
+	printf("\n");
 
 }
 
@@ -71,5 +72,6 @@ void river(Card deck[52]){
 	//burn one
 	printf("\n");
 	printf("%s of %s\n",deck[15].rank,deck[15].suit);
+	printf("\n");
 
 }
